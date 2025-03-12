@@ -28,6 +28,7 @@ public class SampleRestController {
 
 	private String welcome(String name) {
 	  if (name == null) {
+		  System.out.println("test");
 		  return null;
 	  }
 	  return "Welcome " + name;
