@@ -21,6 +21,14 @@ public class SampleRestController {
 	@GetMapping("/hello/{id}")
 	public String sayHello(@PathVariable Integer id) {
 		UserEntity entity = userService.getUser(id);
-		return "Hello " + entity.getFirstName() + " " + entity.getLastName();
+		String welcome = welcome(entity.getFirstName());
+		return "Hello " + welcome + " " + entity.getLastName();
+	}
+
+	private String welcome(String name) {
+	  if (name == null) {
+		  return null;
+	  }
+	  return "Welcome " + name;
 	}
 }
